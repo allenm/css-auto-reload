@@ -1,0 +1,18 @@
+{
+    "name":"css auto reload",
+    "version":"0.1",
+    "description":"auto reload the css on the assign page when the css have been changed",
+    "permissions":["tabs","<all_urls>"],
+
+    "icons":{
+        "16":"imgs/refresh-16.png",
+        "48":"imgs/refresh-48.png",
+        "128":"imgs/refresh-128.png"
+    },
+
+    "background_page":"background.html",
+    "browser_action": {
+        "default_icon": "imgs/refresh-unactive-19.png", 
+        "default_title": "on/off css auto reload"
+    }
+}
