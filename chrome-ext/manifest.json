@@ -1,6 +1,6 @@
 {
     "name":"css auto reload",
-    "version":"0.1",
+    "version":"1.0",
     "description":"auto reload the css on the assign page when the css have been changed",
     "permissions":["tabs","<all_urls>"],
 

@@ -20,3 +20,12 @@ css auto reload 是一个web开发者工具，一款 chrome 插件。它可以�
 * 不支持通过 file:// 打开的页面
 * 不支持页面中的 iframe 内的 css 变化
 
+
+使用说明:
+---------------------
+* 先去 chrome 应用商店安装此 chrome 插件，地址：https://chrome.google.com/webstore/detail/fiikhcfekfejbleebdkkjjgalkcgjoip
+* 安装完成可以看到一个这样的图标：![css auto reload icon](http://static.allenm.me/imgs/icon-unactive.png)
+* chrome 切换到你想监控 css 变化的标签页，然后点击插件图标，插件图标会变成彩色的 ![colorful icon](http://static.allenm.me/imgs/icon-active.png)
+* 当图标处于彩色状态说明正在监控中，你可以再次点击关闭监控，关闭后，图标变成灰色
+* 操作演示视频：[youku](http://v.youku.com/v_show/id_XMzU3MDc5NzI0.html "css auto reload") [youtube](http://www.youtube.com/watch?v=pQgBr5JmxIs&feature=youtu.be "css auto reload")
+
