@@ -116,7 +116,7 @@ var Compare = {
      * parse css content , support the @import syntax
      */
     _parseCssContent:function ( cssUrl, content , callback ){
-        var importReg = /@import.*['"](.*)['"]/g,
+        var importReg = /@import.*(?:['"](.*)['"]|url\((.*)\))/g,
             importList = [],
             self = this;
         while( true ){
@@ -125,15 +125,20 @@ var Compare = {
                 break;
             }else{
                 var prePart = content.slice(0, result.index ),
-                    startComment = prePart.lastIndexOf( '/*' );
+                    startComment = prePart.lastIndexOf( '/*' ),
+                    cssFile = result[1]?result[1]:result[2];
+
+                if( !cssFile ){
+                    break;
+                }
 
                 if( startComment !== -1 ){
                     var endComment = prePart.lastIndexOf('*/');
                     if( endComment !== -1 && endComment > startComment ){ //不在注释中
-                        importList.push( self._getAbsUrl( cssUrl, result[1]) );
+                        importList.push( self._getAbsUrl( cssUrl, cssFile ) );
                     }
                 }else{
-                    importList.push( self._getAbsUrl( cssUrl, result[1]) );
+                    importList.push( self._getAbsUrl( cssUrl, cssFile ) );
                 }
             }
         }

@@ -49,7 +49,7 @@
                         console.log( sender.tab.id + ' have changed');
                         self.request2Reload( sender.tab.id );
                     });
-                    sendResponse('init css list ok');
+                    sendResponse('init css auto reload ok');
                 }
             });
         },
