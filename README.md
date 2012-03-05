@@ -15,7 +15,7 @@ css auto reload 一款 chrome 开发者插件。它可以在你编辑 css 的时
 * 支持 @import ， @import 进来的 css 如果发生了改变也会 reload
 
 
-赞不支持:
+暂不支持:
 ----------------------
 * 不支持通过 file:// 打开的页面
 * 不支持页面中的 iframe 内的 css 变化
