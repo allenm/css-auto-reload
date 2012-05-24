@@ -32,7 +32,10 @@
 
                 var urlArr = url.split('/'),
                     tmpArr = [];
-
+                
+                if( urlArr[0] === "" ){
+                    return window.location.origin + url;
+                }
                 urlArr.forEach( function ( item ) {
                     if( item === '..'){
                         basePathArr.pop();
@@ -43,6 +46,17 @@
                     }
                 });
                 return basePathArr.join('/');
+            }
+        },
+
+        // fix cache problem
+        addTimeStamp:function ( url ) {
+            var now = (new Date())-0;
+            url.replace(/[\?|&]_reload_time=\d+/,"");
+            if( url.indexOf("?") === -1 ){
+                return url+'?_reload_time+'+now;
+            }else{
+                return url+'&_reload_time+'+now;
             }
         }
     }
@@ -92,12 +106,13 @@
 
             links.forEach( function ( item ) {
                 if( Util.getAttr(item ,'rel') === 'stylesheet' ){
-                    var href = Util.getAttr( item , 'href' );
+                    var href = Util.addTimeStamp(Util.getAttr( item , 'href' ));
                     Util.setAttr( item , 'href', href );
                 }
             });
 
         }
+
 
     }
 

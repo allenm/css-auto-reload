@@ -76,7 +76,15 @@ var Compare = {
 
     _getContent:function ( url, callback ) {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", url, true);
+        
+        // fix cache problem
+        var now = (new Date())-0;
+        if( url.indexOf('?') === -1 ){
+            var url = url+'?_='+now;
+        }else{
+            var url = url+'&_='+now;
+        }
+        xhr.open("GET", url , true);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 callback && callback( xhr.responseText );
