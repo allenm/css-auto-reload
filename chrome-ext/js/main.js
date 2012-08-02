@@ -50,6 +50,7 @@
                         self.request2Reload( sender.tab.id );
                     });
                     sendResponse('init css auto reload ok');
+                    self.request2Reload( sender.tab.id ); //先更新一次
                 }
             });
         },

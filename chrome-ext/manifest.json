@@ -1,4 +1,5 @@
 {
+    "manifest_version":2,
     "name":"css auto reload",
     "version":"1.0.3",
     "description":"It can help you automaticly reload the css files in the browser after you modified them, without ruining your codes.",
@@ -10,7 +11,9 @@
         "128":"imgs/refresh-128.png"
     },
 
-    "background_page":"background.html",
+    "background":{
+        "page":"background.html"
+    },
     "browser_action": {
         "default_icon": "imgs/refresh-unactive-19.png", 
         "default_title": "on/off css auto reload"
