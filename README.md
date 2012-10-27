@@ -7,7 +7,9 @@ css auto reload 是一款 chrome 开发者插件。它可以在你编辑 css 的
 项目主页(Github pages):
 ====================
 使用说明，版本变更记录，请阅读项目主页：
+
 中文版：http://allenm.github.com/css-auto-reload/
+
 English version: http://allenm.github.com/css-auto-reload/#en-version
 
 特性:
