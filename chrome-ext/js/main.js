@@ -120,8 +120,22 @@ _gaq.push(['_trackPageview']);
         },
 
         _showVersionTip:function ( version ) {
-            chrome.tabs.create({
-                url:'http://img-area.allenm.me/versions/'+version+'/'
+            chrome.i18n.getAcceptLanguages( function ( lanList ) {
+                console.log( lanList );
+                var lan = "en"
+                lanList.forEach(function ( item ) {
+                    if( item === "zh-CN" || item === "zh" ){
+                        lan = 'zh';
+                        return false;
+                    }
+                });
+                var url = 'http://allenm.github.com/css-auto-reload/#version-' + version;
+                if( lan === 'en' ){
+                    url = url+'-en';
+                }
+                chrome.tabs.create({
+                    url:url
+                });
             });
         }
 
