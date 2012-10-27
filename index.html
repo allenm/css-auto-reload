@@ -28,32 +28,84 @@
         </ul>
       </header>
       <section>
-        <h3>Welcome to GitHub Pages.</h3>
+          <h3>css auto reload 介绍：</h3>
+          <p>css auto reload 是一款 chrome 开发者插件。它可以在你编辑 css 的时候，自动在页面上重新载入最新的 css 文件， 以达到立即展现你刚刚做的改变的目的。特别适合在双屏环境下进行 web 前端开发，使你不必在编辑器和浏览器之间不停的切换， 提高工作效率。</p>
+          <h3>特性:</h3>
+          <p>
+            <ul>
+                <li>只需要安装一个 chrome 插件，不需要特殊的服务器端，不需要特意改变你的页面</li>
+                <li>需要的时候，只需要点击一下插件栏的图标即可对当前页面开启监控，不需要的时候，再次点击以关闭</li>
+                <li>此插件不会更改任何 DOM 结构，也不会在你页面的 js 执行环境中执行任何 js ,绝不干扰你页面的任何代码</li>
+                <li>在你没改变 css 的时候，页面不会 reload css ，调试面板中网络一栏不会多出很多请求(除了file://方式打开的页面)</li>
+                <li>支持 css 和 page 不同域的情况</li>
+                <li>支持 css 相对路径，绝对路径</li>
+                <li>支持 @import ， @import 进来的 css 如果发生了改变也会 reload</li>
+                <li>部分支持 file:// 打开的页面（<a href="#fileconfig">需要一定的配置，请看下边</a>)</li>
+            </ul>
+          </p>
+          <h3>暂不支持:</h3>
+          <p>
+            <ul>
+                <li>不支持页面中的 iframe 内的 css 变化</li>
+            </ul>
+          </p>
+          <h3>使用说明:</h3>
+          <p>
+          先去 chrome 应用商店安装此 chrome 插件，地址：<a target="_blank" href="https://chrome.google.com/webstore/detail/css-auto-reload/fiikhcfekfejbleebdkkjjgalkcgjoip/reviews">https://chrome.google.com/webstore/detail/css-auto-reload/fiikhcfekfejbleebdkkjjgalkcgjoip/reviews</a>
+          </p>
+          <p>安装完成可以看到一个这样的图标：<img src="https://a248.e.akamai.net/camo.github.com/303b8866dedfde670f88c4f3da4cb024c3f035ea/687474703a2f2f7374617469632e616c6c656e6d2e6d652f696d67732f69636f6e2d756e6163746976652e706e67" /></p>
+          <p>chrome 切换到你想监控 css 变化的标签页，然后点击插件图标，插件图标会变成彩色的<img src="https://a248.e.akamai.net/camo.github.com/c42d4e75606b4366f3442ac5e018e4cf7528bd85/687474703a2f2f7374617469632e616c6c656e6d2e6d652f696d67732f69636f6e2d6163746976652e706e67" /></p>
+          <p>当图标处于彩色状态说明正在监控中，你可以再次点击关闭监控，关闭后，图标变成灰色</p>
+          <h3>操作演示视频:</h3>
+          <p><embed src="http://player.youku.com/player.php/sid/XMzU3MDc5NzI0/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed></p>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+          <h3 id="fileconfig">file:// 配置</h3>
+          <p>需要打开chrome 插件页面,在地址栏输入：“chrome://chrome/extensions/”, 回车, 找到 css auto reload ,勾上“允许访问文件网址”. 另外此模式下，如果 css 使用的相对路径，则不支持 @import . </p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+          <h3 id="version-1.1.0">version 1.1.0 changelog: </h3>
+          <ul>
+              <li>对 chrome-extension:// 开头的 css 不做处理，减少请求数，同时避免 server 端报 404 。</li>
+              <li>增加了 file:// 打开的页面的部分支持，需要一些<a href="#fileconfig">设置</a></li>
+          </ul>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+      </section>
+      <section id="en-version">
+          <h3>Introduce the css auto reload ：</h3>
+          <p>Css auto reload is a chrome extension for web developers . It helps you automaticly reload the css files in the browser after you modify them, without ruining your codes. It's very suitable for the multi screen work environment. </p>
+          <h3>Features:</h3>
+          <p>
+            <ul>
+                <li>It only need install a chrome extension , don't need a special http server , and don't need you modify your page specially.</li>
+                <li>Just click the icon on the browser to start / stop watch the css changes , very simple. </li>
+                <li>It don't change your page's DOM , and don't execute any js code in your page's context.</li>
+                <li>It won't reload css before you change your css , so the netpanel in developers tools is clean.(Except the file:// page)</li>
+                <li>Support the condition of the css's domain is different from the page's domain.</li>
+                <li>Support the relative css link and absolute css link.</li>
+                <li>Support the @import . </li>
+                <li>Partly support the page open by file:// .(<a href="#fileconfig-en">need some config , see below</a>)</li>
+            </ul>
+          </p>
+          <h3>Not Support yet:</h3>
+          <p>
+            <ul>
+                <li>Not support the css in a iframe </li>
+            </ul>
+          </p>
+          <h3>How to use:</h3>
+          <p>Go to the chrome webstore , and install this extension. The url is <a href="https://chrome.google.com/webstore/detail/css-auto-reload/fiikhcfekfejbleebdkkjjgalkcgjoip/reviews" target="_blank">https://chrome.google.com/webstore/detail/css-auto-reload/fiikhcfekfejbleebdkkjjgalkcgjoip/reviews</a></p>
+          <p>Then you can see a icon like this:<img src="https://a248.e.akamai.net/camo.github.com/303b8866dedfde670f88c4f3da4cb024c3f035ea/687474703a2f2f7374617469632e616c6c656e6d2e6d652f696d67732f69636f6e2d756e6163746976652e706e67" /></p> 
+          <p>Open the page which you are developing, click the extension's icon , then the icon become a colorful one:<img src="https://a248.e.akamai.net/camo.github.com/c42d4e75606b4366f3442ac5e018e4cf7528bd85/687474703a2f2f7374617469632e616c6c656e6d2e6d652f696d67732f69636f6e2d6163746976652e706e67" /></p>
+          <p>The colorful icon means the extension is working. You can click this icon again , then the icon become gray , it means stop working.</p>
+          <h3>Operation video:</h3>
+          <p><iframe width="560" height="315" src="http://www.youtube.com/embed/pQgBr5JmxIs" frameborder="0" allowfullscreen></iframe></p>
+          <h3 id="fileconfig-en">file:// config</h3>
+          <p>You need open the chrome extension page in your browser, enter this in your address bar: "chrome://chrome/extensions/", press enter. Find the css auto reload , then make sure the "Allow access to file urls" option is checked . By the way , In this mode , if your css url is a relative url , can't support the @import .</p>
 
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+          <h3 id="version-1.1.0">version 1.1.0 changelog: </h3>
+          <ul>
+              <li>Don't handle the chrome-extension:// url , reduce the request number and clear away the 404 error on your server.</li>
+              <li>Add part support of the file:// page, need some <a href="#fileconfig-en">config</a></li>
+          </ul>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/allenm">allenm</a></p>
