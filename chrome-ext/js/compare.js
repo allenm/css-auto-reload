@@ -118,6 +118,7 @@ var Compare = {
      */
     unWatch:function ( tabId ) {
         delete this._watchList[tabId];
+        chrome.tabs.sendRequest( tabId, {"action":"unWatch"});
     },
 
     /**
