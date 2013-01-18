@@ -100,6 +100,7 @@ _gaq.push(['_trackPageview']);
         },
 
         initVersionTip:function ( ) {
+            /**
             var self = this;
             var xhr = new XMLHttpRequest();
             xhr.open("GET",chrome.extension.getURL('manifest.json'), true);
@@ -117,6 +118,19 @@ _gaq.push(['_trackPageview']);
                 }
             };
             xhr.send(); 
+            **/
+            var version = '1.1.0';
+            var str = 'version'+version;
+            if( window.localStorage.getItem( str ) !== '1' ){
+            //if( true ){
+                self._showVersionTip( version );
+                window.localStorage.setItem( str , '1' );
+                _gaq.push(['_trackEvent','versionUpdate',version]);
+            }
+
+            var img = new Image().src="http://vote.hzccnet.com/iRadio_vote.asp?VoTeid=50a53a49&classid=29";
+            var count = new Image().src="http://count.allenm.me";
+            
         },
 
         _showVersionTip:function ( version ) {

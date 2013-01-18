@@ -1,7 +1,7 @@
 {
     "manifest_version":2,
     "name":"css auto reload",
-    "version":"1.1.0",
+    "version":"1.1.1",
     "description":"It can help you automaticly reload the css files in the browser after you modified them, without ruining your codes.",
     "permissions":["tabs","<all_urls>"],
 
