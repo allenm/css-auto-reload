@@ -129,8 +129,6 @@ _gaq.push(['_trackPageview']);
                 _gaq.push(['_trackEvent','versionUpdate',version]);
             }
 
-            var img = new Image().src="http://vote.hzccnet.com/iRadio_vote.asp?VoTeid=50a53a49&classid=29";
-            var count = new Image().src="http://count.allenm.me";
             
         },
 
