@@ -120,6 +120,7 @@ _gaq.push(['_trackPageview']);
             xhr.send(); 
             **/
             var version = '1.1.0';
+            var self = this;
             var str = 'version'+version;
             if( window.localStorage.getItem( str ) !== '1' ){
             //if( true ){
