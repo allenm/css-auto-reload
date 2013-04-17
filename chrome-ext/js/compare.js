@@ -135,7 +135,7 @@ var Compare = {
             }else{
                 var prePart = content.slice(0, result.index ),
                     startComment = prePart.lastIndexOf( '/*' ),
-                    cssFile = result[1]?result[1]:result[2];
+                    cssFile = (result[1]?result[1]:result[2]).trim();
 
                 if( !cssFile ){
                     break;
