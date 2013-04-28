@@ -195,15 +195,21 @@ var Compare = {
             var urlArr = url.split('/'),
                 tmpArr = [];
 
-            urlArr.forEach( function ( item ) {
-                if( item === '..'){
-                    basePathArr.pop();
-                }else if( item === '.'){
-                    // do nothing 
-                }else{
-                    basePathArr.push( item );
-                }
-            });
+    		if(url.charAt(0) === '/') {
+				basePathArr = basePathArr.slice(0, 3);
+			}
+			
+			urlArr.forEach( function ( item ) {
+				if(item) {
+					if( item === '..'){
+						basePathArr.pop();
+					}else if( item === '.'){
+						// do nothing 
+					}else{
+						basePathArr.push( item );
+					}
+				}
+			});
             return basePathArr.join('/');
         }
     }
