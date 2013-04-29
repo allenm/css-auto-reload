@@ -186,32 +186,36 @@ var Compare = {
      * 获取相对路径对应的绝对URL
      */
     _getAbsUrl:function ( baseUrl, url ) {
-        if( /https{0,1}:\/\//.test(url) ){
+        if( /https{0,1}:\/\//.test(url) ){  // 绝对 URL 
             return url;
-        }else{
-            var basePathArr = baseUrl.split('/');
-            basePathArr.pop();
-
-            var urlArr = url.split('/'),
-                tmpArr = [];
-
-    		if(url.charAt(0) === '/') {
-				basePathArr = basePathArr.slice(0, 3);
-			}
-			
-			urlArr.forEach( function ( item ) {
-				if(item) {
-					if( item === '..'){
-						basePathArr.pop();
-					}else if( item === '.'){
-						// do nothing 
-					}else{
-						basePathArr.push( item );
-					}
-				}
-			});
-            return basePathArr.join('/');
         }
+
+        var basePathArr = baseUrl.split('/');
+        basePathArr.pop();
+
+        var urlArr = url.split('/'),
+            tmpArr = [];
+        
+        if( url.slice(0,2) === '//' ){ // 省略协议的 URL
+          return basePathArr[0] + url;
+        }
+
+        if(url.charAt(0) === '/') {  // 省略域名的 URL
+          return basePathArr.slice(0,3).join('/') + url;
+        }
+        
+        urlArr.forEach( function ( item ) {  // 相对 URL
+          if(item) {
+            if( item === '..'){
+              basePathArr.pop();
+            }else if( item === '.'){
+              // do nothing 
+            }else{
+              basePathArr.push( item );
+            }
+          }
+        });
+        return basePathArr.join('/');
     }
 
 
