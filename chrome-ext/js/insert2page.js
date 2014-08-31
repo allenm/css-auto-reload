@@ -23,8 +23,10 @@
          * get absolute url 
          */
         getAbsUrl:function( url ) {
-            if( /https{0,1}:\/\//.test(url) ){
+            if( /https{0,1}:\/\//.test(url) ) {
                 return url;
+            }else if( url.slice(0,2) === '//' ){  // 省略协议的 URL
+                return window.location.protocol + url;
             } else if ( url.slice(0,19) === 'chrome-extension://' ){  // filter the url start with chrome-extension:// 
                 return false;
             } else if ( window.location.origin === 'file://' ){  // 使用 file:// 打开的页面 ,并且使用了相对路径
